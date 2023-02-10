@@ -1,0 +1,183 @@
+.ui_guide .chat {
+    width: 480px;
+    height: 600px;
+    margin: 10px auto 0;
+    background-color: #f5f5f5;
+    position: relative;
+    padding: 56px 0 52px;
+    box-sizing: border-box;
+    background-size: cover;
+    border-radius: 20px;
+    background-image: url("");
+    resize: both;
+    overflow: hidden;
+}
+
+.ui_guide .chat .title {
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    text-align: center;
+    font-size: 18px;
+    background-color: #3b3a3f;
+    color: #f9f9f9;
+    border-radius: 20px 10px 40px 8px/ 5px 35px
+}
+
+.ui_guide .chat .text {
+    width: 100%;
+    height: 100%;
+    padding: 0 12px 10px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-top: 0px
+}
+
+.ui_guide .chat .text::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 6px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+
+.ui_guide .chat .text::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 5px;
+    background: #7b889c;
+}
+
+.ui_guide .chat .text::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    /*-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);*/
+    border-radius: 5px;
+    background: #d9dde4;
+}
+
+.ui_guide .chat .text li {
+    width: 90%;
+    position: relative;
+    margin-top: 18px;
+    box-sizing: border-box;
+    list-style-type: none
+}
+
+.ui_guide .chat .text li img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+}
+
+.ui_guide .chat .text .txt {
+    min-height: 40px;
+    font-size: 15px;
+    line-height: 24px;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 1px solid #d8d8d8;
+    color: #333;
+}
+
+.ui_guide .chat .text .t1 {
+    padding-left: 52px;
+    float: left;
+}
+
+.ui_guide .chat .text .t2 {
+    padding-right: 52px;
+    float: right;
+}
+
+.ui_guide .chat .text .t1 img {
+    left: 0;
+    width: 40px;
+    height: 40px
+}
+
+.ui_guide .chat .text .t2 img {
+    right: 0;
+    width: 40px;
+    height: 40px
+}
+
+.ui_guide .chat .text .t2 img:hover {
+    transform: rotate(666turn);
+    transition-duration: 59s;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.34, 0, .84, 1);
+    transition-delay: 1s;
+}
+
+.ui_guide .chat .text .t1 .txt {
+    float: left;
+    background-color: #fff;
+}
+
+.ui_guide .chat .text .t2 .txt {
+    float: right;
+    background-color: #98e855;
+}
+
+.ui_guide .chat .cont {
+    width: 100%;
+    height: 52px;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    z-index: 10;
+    background-color: #ebebeb;
+    padding: 8px 76px 8px 12px;
+    box-sizing: border-box;
+    box-shadow: 0 -2px 5px #d8d8d8;
+    border-radius: 20px 10px 40px 8px/ 5px 35px
+}
+
+.ui_guide .chat .cont .inp {
+    width: 100%;
+    height: 36px;
+    margin: 0;
+    padding: 5px 10px;
+    border: 1px solid #d8d8d8;
+    color: #333;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 18px;
+}
+
+.ui_guide .chat .cont .inp::-webkit-input-placeholder {
+    color: #999;
+}
+
+.ui_guide .chat .cont .inp::-moz-placeholder {
+    color: #999;
+}
+
+.ui_guide .chat .cont .inp::-ms-input-placeholder {
+    color: #999;
+}
+
+.ui_guide .chat .cont .send {
+    width: 59px;
+    height: 33px;
+    line-height: 3px;
+    text-align: center;
+    position: absolute;
+    right: 12px;
+    top: 9px;
+    color: #3b3a3f;
+    background-color: #cccccc;
+    border: 0;
+    border-radius: 20px;
+    font-weight: bold
+}
+
+.ui_guide .chat .cont .send:hover {
+    background-color: #02cb0b
+}

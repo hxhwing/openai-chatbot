@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	{#
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">#}
+	<title>AI ChatBot Demo</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+	<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../static/js/demo.js"></script>
+</head>
+
+<body>
+	<div class="ui_guide">
+		<div class="chat">
+			<div class="title">人工聊天机器人</div>
+			<ul class="text" id="ui_msg_box">
+				<li class="t1">
+					<img src="../static/images/chatbot.png">
+					<div class="txt">欢迎！</div>
+				</li>
+			</ul>
+			<div class="cont">
+				<input type="text" placeholder="在这里输入文字" class="inp" id="ui_inp_msg" />
+				<input type="button" value="发送" onclick="sendmsg()" class="send">
+			</div>
+		</div>
+	</div>
+
+
+</body>
+
+</html>
