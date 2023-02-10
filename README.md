@@ -56,7 +56,22 @@ cd openai-chatbot
 pip3 install -r requirements.txt
 ```
 
-### 3. Run Chatbot web service locally
+### 3. Setup API key in Environment Variable
+```
+export api_key="paster_your_api_key"
+```
+
+### 4. Run Chatbot web service locally
 ```
 python3 -m flask --app main.py run
+```
+
+**Browse http://127.0.0.1:5000 to access to Chatbot**
+```
+➜  openai-chatbot git:(main) python3 -m flask --app main.py run
+ * Serving Flask app 'main.py'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
 ```
