@@ -1,5 +1,7 @@
 # Build and Deploy OpenAI-powered Chatbot
 
+**You can follow this guide to quickly setup a web-based Chatbot,  powered by OpenAI, on GCP Cloud Run or your local machine**
+
 ![demo](static/images/demo.png)
 
 **As a prerequisite, you need to have an OpenAI account, and obtain a API key.**
@@ -39,7 +41,7 @@ gcloud run deploy \
 This will automatically build container image from source, and interactively deploy your web service to Cloud Run
 
 
-### After deployment completion, browse Cloud Run Service URL to access the Chatbot. 
+**After deployment completion, browse Cloud Run Service URL to access the Chatbot.**
 
 
 
