@@ -1,10 +1,10 @@
-# Build and Deploy OpenAI-powered Chatbot on Cloud Run
+# Build and Deploy OpenAI-powered Chatbot
 
 ![demo](static/images/demo.png)
 
 **As a prerequisite, you need to have an OpenAI account, and obtain a API key.**
 
-## Manual Deployment
+## Manual deployment on GCP Cloud Run
 
 ### 1. Store your API key in Secrets Manager
 ```
@@ -24,7 +24,7 @@ gcloud secrets add-iam-policy-binding $secretId \
 
 ### 2. Download git repo
 ```
-git clone ***
+git clone https://github.com/hxhwing/openai-chatbot.git
 cd openai-chat
 ```
 
@@ -40,3 +40,23 @@ This will automatically build container image from source, and interactively dep
 
 
 ### After deployment completion, browse Cloud Run Service URL to access the Chatbot. 
+
+
+
+## Test on local machine
+
+### 1. Download git repo
+```
+git clone https://github.com/hxhwing/openai-chatbot.git
+cd openai-chatbot
+```
+
+### 2. Install required dependencies
+```
+pip3 install -r requirements.txt
+```
+
+### 3. Run Chatbot web service locally
+```
+python3 -m flask --app main.py run
+```
