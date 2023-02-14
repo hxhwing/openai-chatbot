@@ -17,7 +17,7 @@ function sendmsg() {
 	scrollMsgBottom();
 	$.ajax({
 		type: "POST",
-		url: "/tryChat",
+		url: "/chat",
 		data: { 'mydata': msg },
 		// dataType:"text",
 		success: function (data) {
