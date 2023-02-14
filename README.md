@@ -35,6 +35,7 @@ cd openai-chat
 gcloud run deploy chatbot \
 --update-secrets=api_key=${secretId}:latest \
 --allow-unauthenticated \
+--source . \
 --region=us-central1
 ```
 

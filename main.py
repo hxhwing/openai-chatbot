@@ -14,15 +14,15 @@ app = Flask(
 )
 
 
-@app.route("/tryChat", methods=["GET", "POST"])
-def tryChat():
+@app.route("/chat", methods=["GET", "POST"])
+def chat():
     a = request.form.get("mydata")  # 获取ajax中mydata的内容，也就是输入的内容
     word = str(a)
-    Chatword = chat(word)  # 返回应答
-    return Chatword
+    reply = get_reply(word)  # 返回应答
+    return reply
 
 
-def chat(text):
+def get_reply(text):
     try:
         response = openai.Completion.create(
             model="text-davinci-003",
