@@ -23,14 +23,17 @@ def tryChat():
 
 
 def chat(text):
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        # model="text-curie-001",
-        prompt=text,
-        temperature=0,
-        max_tokens=2000,
-    )
-    return response["choices"][0]["text"]
+    try:
+        response = openai.Completion.create(
+            model="text-davinci-003",
+            # model="text-curie-001",
+            prompt=text,
+            temperature=0,
+            max_tokens=2000,
+        )
+        return response["choices"][0]["text"]
+    except openai.error.RateLimitError as err:
+        return "openai.error.RateLimitError: " + str(err)
 
 
 # def smallchatbot(msg):
