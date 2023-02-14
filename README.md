@@ -32,7 +32,7 @@ cd openai-chat
 
 ### 3. Run gcloud to build and deploy Cloud Run service interactively
 ```
-gcloud run deploy \
+gcloud run deploy chatbot \
 --update-secrets=api_key=${secretId}:latest \
 --allow-unauthenticated \
 --region=us-central1
