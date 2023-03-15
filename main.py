@@ -17,35 +17,36 @@ app = Flask(
 
 @app.route("/chat", methods=["GET", "POST"])
 def chat():
-    a = request.form.get("mydata")  # 获取ajax中mydata的内容，也就是输入的内容
+    a = request.form.get("mydata")  # Get user input
     word = str(a)
-    reply = get_reply(word)  # 返回应答
+    reply = get_reply(word)  
     return reply
 
 # For GPT 3+ models, use ChatCompletion API, openai.ChatCompletion.create
 # For older models, use Completion API, openai.Completion.create
 def get_reply(text):
     try:
+        # response = openai.Completion.create(
+        #     model=chat_model,
+        #     # model="text-curie-001",
+        #     prompt=text,
+        #     temperature=0,
+        #     max_tokens=4096,
+        # )
+        # return response["choices"][0]["text"]
         response = openai.ChatCompletion.create(
             model=chat_model,
-            # model="text-curie-001",
-            prompt=text,
             temperature=0,
-            max_tokens=4096,
-        )
-        return response["choices"][0]["text"]
+            max_tokens=2048,
+            messages=[
+                {"role": "user", "content": text},
+                ]
+            )
+        content = response['choices'][0]['message']['content']
+        content = content.replace('\n', '<br />')
+        return content
     except openai.error.RateLimitError as err:
         return "openai.error.RateLimitError: " + str(err)
-
-
-# def smallchatbot(msg):
-#     url = f"http://api.qingyunke.com/api.php?key=free&appid=0&msg={msg}"  # 请求地址
-#     html = requests.get(url)
-#     content = html.json()["content"]
-#     con = str(content)
-#     c = con.replace("{br}", "\n")  # 对其返回的{br}进行转换转换为换行
-#     return c
-
 
 @app.route("/")
 def search():

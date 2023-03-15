@@ -35,7 +35,7 @@ Put model type into environment variable
 model='gpt-3.5-turbo'
 ```
 > **Note**
-> For gpt-3+ models, use /v1/chat/completion API endpoint
+> For gpt-3+ models, use /v1/chat/completion API endpoint;  
 > For older text models, like text-davinci, use /v1/completions API endpoint
 
 ### 4. Run gcloud to build and deploy Cloud Run service interactively
@@ -68,9 +68,10 @@ cd openai-chatbot
 pip3 install -r requirements.txt
 ```
 
-### 3. Setup API key in Environment Variable
+### 3. Setup API key and model type in Environment Variable
 ```
 export api_key="paster_your_api_key"
+export model="gpt-3.5-turbo"
 ```
 
 ### 4. Run Chatbot web service locally
