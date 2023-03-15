@@ -3,6 +3,7 @@ from flask import Flask, request, send_from_directory, render_template
 import openai
 import os
 
+chat_model = os.environ.get("model")
 api_key = os.environ.get("api_key")
 if api_key:
     openai.api_key = api_key
@@ -21,15 +22,16 @@ def chat():
     reply = get_reply(word)  # 返回应答
     return reply
 
-
+# For GPT 3+ models, use ChatCompletion API, openai.ChatCompletion.create
+# For older models, use Completion API, openai.Completion.create
 def get_reply(text):
     try:
-        response = openai.Completion.create(
-            model="text-davinci-003",
+        response = openai.ChatCompletion.create(
+            model=chat_model,
             # model="text-curie-001",
             prompt=text,
             temperature=0,
-            max_tokens=2000,
+            max_tokens=4096,
         )
         return response["choices"][0]["text"]
     except openai.error.RateLimitError as err:

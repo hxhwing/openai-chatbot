@@ -29,11 +29,20 @@ gcloud secrets add-iam-policy-binding $secretId \
 git clone https://github.com/hxhwing/openai-chatbot.git
 cd openai-chat
 ```
+### 3. Specify which model to use
+Put model type into environment variable 
+```
+model='gpt-3.5-turbo'
+```
+> **Note**
+> For gpt-3+ models, use /v1/chat/completion API endpoint
+> For older text models, like text-davinci, use /v1/completions API endpoint
 
-### 3. Run gcloud to build and deploy Cloud Run service interactively
+### 4. Run gcloud to build and deploy Cloud Run service interactively
 ```
 gcloud run deploy chatbot \
 --update-secrets=api_key=${secretId}:latest \
+--set-env-vars=model=${model} \
 --allow-unauthenticated \
 --source . \
 --region=us-central1
