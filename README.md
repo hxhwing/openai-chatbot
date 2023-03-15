@@ -35,7 +35,9 @@ Put model type into environment variable
 model='gpt-3.5-turbo'
 ```
 > **Note**
-> For gpt-3+ models, use /v1/chat/completion API endpoint;  
+>
+> For gpt-3+ models, use /v1/chat/completion API endpoint
+> 
 > For older text models, like text-davinci, use /v1/completions API endpoint
 
 ### 4. Run gcloud to build and deploy Cloud Run service interactively
