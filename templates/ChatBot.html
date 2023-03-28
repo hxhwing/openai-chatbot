@@ -10,15 +10,15 @@
 	<link rel="stylesheet" href="../static/css/style.css">
 	<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="../static/js/demo.js"></script>
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeWpBUlAAAAAHyB21FLHlh5sb7YNAk8aMsxzq1F"></script>
+	<!-- <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeWpBUlAAAAAHyB21FLHlh5sb7YNAk8aMsxzq1F"></script> -->
 	<script>
-	  grecaptcha.enterprise.ready(async () => {
-	    const token = await grecaptcha.enterprise.execute('6LeWpBUlAAAAAHyB21FLHlh5sb7YNAk8aMsxzq1F', {action: 'homepage'});
-	    // IMPORTANT: The 'token' that results from execute is an encrypted response sent by
-	    // reCAPTCHA Enterprise to the end user's browser.
-	    // This token must be validated by creating an assessment.
-	    // See https://cloud.google.com/recaptcha-enterprise/docs/create-assessment
-	  });
+		grecaptcha.enterprise.ready(async () => {
+			const token = await grecaptcha.enterprise.execute('6LeWpBUlAAAAAHyB21FLHlh5sb7YNAk8aMsxzq1F', { action: 'homepage' });
+			// IMPORTANT: The 'token' that results from execute is an encrypted response sent by
+			// reCAPTCHA Enterprise to the end user's browser.
+			// This token must be validated by creating an assessment.
+			// See https://cloud.google.com/recaptcha-enterprise/docs/create-assessment
+		});
 	</script>
 </head>
 
